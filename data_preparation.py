@@ -17,7 +17,7 @@ def scrape(reader, fileLen):
         teamID = str(t) if t > 99 else "0" + str(t) if t > 9 else "00" + str(t)
 
         password = ''.join(random.choices(string.ascii_letters, k=6))
-        player1,player2 = row[2],row[6] # full name
+        player1,player2 = row[3],row[6] # full name
         player1_firstname, player2_firstname = player1.split(" ")[0], player2.split(" ")[0]
 
         # email for mailing directly to the user
