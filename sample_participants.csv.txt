@@ -1,5 +1,5 @@
 Timestamp,Email Address,Full Name,College name,Mobile Number,Team type,Name of teammate for Duo,College of teammate for Duo,Mobile number of teammate for Duo,Payment Screenshot (For Online Payment),Referral (For Cash Payment)
-01-10-2023 17:28,vedant.dummy@spit.ac.in,vedant dummy ,Spit,XXX7700XXX,Duo (Team of 2),Stephen Vaz,Spit,+91 XXX46 75XXX,https://drive.google.com/open?id=1AzMXXXnNE7d297TBt6EC34aZhckkXXX,
+01-10-2023 17:28,pulkitdwivedi123@gmail.com,Sun Tzu,Spit,XXX7700XXX,Duo (Team of 2),UrMom,Spit,+91 XXX46 75XXX,https://drive.google.com/open?id=1AzMXXXnNE7d297TBt6EC34aZhckkXXX,
 01-10-2023 17:28,pulkit.gupta22@spit.ac.in,Pulkit Gupta,Example University,XXX1234XXX,Duo (Team of 2),Jane Smith,Example University,+91 XXX12 34XXX,https://drive.google.com/open?id=1AbCXXXdEfGhIjKlMnOpQrStUvWxYz,
 01-10-2023 17:29,jane.doe@example.com,Jane Doe,Example University,XXX5678XXX,Duo (Team of 2),John Smith,Example University,+91 XXX56 78XXX,https://drive.google.com/open?id=1DeFXXXgHiJkLmNoPqRsTuVwXyZaB,
 01-10-2023 17:30,alex.smith@example.com,Alex Smith,Example University,XXX9012XXX,Duo (Team of 2),Emily Johnson,Example University,+91 XXX90 12XXX,https://drive.google.com/open?id=1GhIXXXjKlMnOpQrStUvWxYzAbCd,
@@ -8,4 +8,4 @@ Timestamp,Email Address,Full Name,College name,Mobile Number,Team type,Name of t
 01-10-2023 17:33,sarah.wilson@example.com,Sarah Wilson,Example University,XXX2345XXX,Duo (Team of 2),Sam Davis,Example University,+91 XXX23 45XXX,https://drive.google.com/open?id=1OpQXXXtUvWxYzAbCdEfGhIjKlMn,
 01-10-2023 17:34,michael.brown@example.com,Michael Brown,Example University,XXX6789XXX,Duo (Team of 2),Emma Taylor,Example University,+91 XXX67 89XXX,https://drive.google.com/open?id=1StUXXXxYzAbCdEfGhIjKlMnOpQr,
 01-10-2023 17:35,emma.brown@example.com,Emma Brown,Example University,XXX0123XXX,Duo (Team of 2),Michael Taylor,Example University,+91 XXX01 23XXX,https://drive.google.com/open?id=1UvWXXXzAbCdEfGhIjKlMnOpQrSt,
-01-10-2023 17:36,pulkit.dwivedi22@spit.ac.in,Pulkit Dwivedi,Example University,XXX4567XXX,Duo (Team of 2),Olivia Anderson,Example University,+91 XXX45 67XXX,https://drive.google.com/open?id=1WxYXXXbCdEfGhIjKlMnOpQrStUv,
+01-10-2023 17:36,pulkit.dwivedi22@spit.ac.in,Pulkit Dwivedi and Your Mom,Example University,7718965798,Solo (Team of 1),,,,https://drive.google.com/open?id=1WxYXXXbCdEfGhIjKlMnOpQrStUv,
