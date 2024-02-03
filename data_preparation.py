@@ -30,7 +30,7 @@ def scrape(reader, fileLen):
         userdict['password'] = password
         
         users_array.append(userdict)
-    print(users_array)
+    # print(users_array)
     return users_array
 
 # Function to prepare the data

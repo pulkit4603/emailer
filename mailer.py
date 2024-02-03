@@ -16,8 +16,8 @@ def send_email(user: dict, app_link: str, sender_email: str, sender_email_passwo
     Clues, points, hints and power-ups can be accessed and bought directly through the app.
     
     Below is the download link for the TechRace 2024 App:
-    (go to {app_link}) to download the Android app)
-
+    (go to https://play.google.com/store/apps/details?id=com.oculus.techrace) to download the Android app)
+    (go to https://testflight.apple.com/join/9hFC6TqL) to download the iOS app)
     Team Code: {user['teamID']}
     Password: {user['password']}
     Players: {user['player1']}{user['player2']}
@@ -59,12 +59,7 @@ def send_email(user: dict, app_link: str, sender_email: str, sender_email_passwo
               <tbody>
                 <tr>
                   <td align="center" valign="top" style="padding: 36px 24px">
-                    <a
-                      href="https://oculus.spit.ac.in"
-                      style="display: inline-block"
-                      rel="noreferrer"
-                      target="_blank"
-                      ><img
+                    <img
                         src="https://i.ibb.co/6Zc8n0F/oculus.png"
                         alt="oculus"
                         border="0"
@@ -77,16 +72,10 @@ def send_email(user: dict, app_link: str, sender_email: str, sender_email_passwo
                         "
                         class="CToWUd"
                         data-bit="iit"
-                    /></a>
+                    />
                   </td>
                   <td align="center" valign="top" style="padding: 36px 24px">
-                    <a
-                      href="https://oculus.spit.ac.in/events/techrace"
-                      style="display: inline-block"
-                      rel="noreferrer"
-                      target="_blank"
-                      data-saferedirecturl="https://www.google.com/url?q=https://oculus.spit.ac.in/events/techrace&amp;source=gmail&amp;ust=1706869221674000&amp;usg=AOvVaw1j-RTrVx5palCy8K0p5Lyd"
-                    >
+                    
                       <img
                         src="https://i.ibb.co/86qm54G/unnamed.png"
                         alt="TechRace 2023 Logo"
@@ -101,16 +90,10 @@ def send_email(user: dict, app_link: str, sender_email: str, sender_email_passwo
                         class="CToWUd"
                         data-bit="iit"
                       />
-                    </a>
+                    
                   </td>
                   <td align="center" valign="top" style="padding: 36px 24px">
-                    <a
-                      href="https://www.spit.ac.in/"
-                      style="display: inline-block"
-                      rel="noreferrer"
-                      target="_blank"
-                      data-saferedirecturl="https://www.google.com/url?q=https://www.spit.ac.in/&amp;source=gmail&amp;ust=1706869221674000&amp;usg=AOvVaw2x9h_4m0y1VjStUXBcdaZK"
-                    >
+                    
                       <img
                         src="https://i.ibb.co/3fwrn5T/spit.png"
                         alt="S.P.I.T Logo"
@@ -125,7 +108,7 @@ def send_email(user: dict, app_link: str, sender_email: str, sender_email_passwo
                         class="CToWUd"
                         data-bit="iit"
                       />
-                    </a>
+                    
                   </td>
                 </tr>
               </tbody>
@@ -204,14 +187,24 @@ def send_email(user: dict, app_link: str, sender_email: str, sender_email_passwo
                       power-ups can be accessed and bought directly through the
                       app.<br />
                       (<a
-                        href="{app_link}"
+                        href="https://play.google.com/store/apps/details?id=com.oculus.techrace"
                         rel="noreferrer"
                         target="_blank"
-                        data-saferedirecturl="{app_link}"
+                        data-saferedirecturl="https://play.google.com/store/apps/details?id=com.oculus.techrace"
                         jslog="32272; 1:WyIjdGhyZWFkLWY6MTc4OTA3NDI4MTAxNTYyNjE2MyJd; 4:WyIjbXNnLWY6MTc4OTA3NDI4MTAxNTYyNjE2MyJd"
                         >click here</a
                       >
                       to download the Android app)
+                      <br />
+                      (<a
+                        href="https://testflight.apple.com/join/9hFC6TqL"
+                        rel="noreferrer"
+                        target="_blank"
+                        data-saferedirecturl="https://testflight.apple.com/join/9hFC6TqL"
+                        jslog="32272; 1:WyIjdGhyZWFkLWY6MTc4OTA3NDI4MTAxNTYyNjE2MyJd; 4:WyIjbXNnLWY6MTc4OTA3NDI4MTAxNTYyNjE2MyJd"
+                        >click here</a
+                      >
+                      to download the iOS app)
                       <br />
                       Below are your team's login details for the TechRace 2024
                       App. Please keep them safe and handy.<br />
@@ -365,7 +358,6 @@ def send_email(user: dict, app_link: str, sender_email: str, sender_email_passwo
   </body>
 </html>
 """
-    
     # Attach the plain text and HTML version of the email
     msg.attach(MIMEText(message, 'plain'))
     msg.attach(MIMEText(html_content, 'html'))
@@ -377,6 +369,14 @@ def send_email(user: dict, app_link: str, sender_email: str, sender_email_passwo
         server.sendmail(msg['From'], msg['To'], msg.as_string())
         server.quit()
         print("Email sent successfully")
+    except smtplib.SMTPDataError as e:
+        if 'WASCL UserAction verdict is not None. Actual verdict is suspend' in str(e):
+            print(f"SMTPDataError occurred, re-raising exception: {e}")
+            raise  # re-raise the exception
+        else:
+            print(f"An error occurred while sending the email to {user['email']}: {e}")
+            raise Exception("An unknown error occurred while sending the email")
     except Exception as e:
         error_message = traceback.format_exc()
+        raise Exception(error_message)
         print("An error occurred: ", error_message)
